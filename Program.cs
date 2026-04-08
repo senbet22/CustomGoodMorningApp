@@ -1,4 +1,8 @@
-﻿Console.WriteLine("Hei, Velkommen til Godmorgen APP!");
+﻿using System.Globalization;
+
+CultureInfo norwegian = new CultureInfo("nb-NO");
+
+Console.WriteLine("Hei, Velkommen til Godmorgen APP!");
 Console.WriteLine("///////////////////////////////");
 
 string name = "";
@@ -8,7 +12,7 @@ while (string.IsNullOrWhiteSpace(name))
     name = Console.ReadLine() ?? "";
 }
 
-DayOfWeek today = DateTime.Now.DayOfWeek;
+string today = DateTime.Now.ToString("dddd", norwegian);
 int timeOfDay = DateTime.Now.Hour;
 
 
@@ -33,7 +37,7 @@ string key = timeOfDay switch
 
 Console.WriteLine(greetings[key]);
 
-
+Console.WriteLine("///////////////////////////////");
 Console.WriteLine("Hvordan har du det i dag? B = bra, O = okay og D = dårlig");
 string mood = (Console.ReadLine() ?? "").Trim().ToLower();
 
