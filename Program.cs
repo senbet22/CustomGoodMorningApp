@@ -1,10 +1,10 @@
-﻿Console.WriteLine("Hello, Welcome to Greetings App!");
+﻿Console.WriteLine("Hei, Velkommen til Godmorgen APP!");
 Console.WriteLine("///////////////////////////////");
 
 string name = "";
 while (string.IsNullOrWhiteSpace(name))
 {
-    Console.WriteLine("Please enter your name!");
+    Console.WriteLine("Hva heter du?");
     name = Console.ReadLine() ?? "";
 }
 
@@ -32,3 +32,18 @@ string key = timeOfDay switch
 };
 
 Console.WriteLine(greetings[key]);
+
+
+Console.WriteLine("Hvordan har du det i dag? B = bra, O = okay og D = dårlig");
+string mood = (Console.ReadLine() ?? "").Trim().ToLower();
+
+string moodMessage = mood switch
+{
+    "b" => $"Så bra å høre! ha en fin {today}!",
+    "o" => $"Ok er bra nok! ha en fin {today}!",
+    "d" => $"Håper {today}en din blir bedre!",
+    _ => $"Jeg forstod ikke svaret ditt, men ha en fin {today}!"
+};
+Console.WriteLine(moodMessage);
+
+Console.ReadKey();
