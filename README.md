@@ -20,6 +20,7 @@ A simple C# console application that greets the user based on the time of day an
 ```bash
 dotnet run
 ```
+# Flowchart
   
 <img src="public/flowchart.png" alt="CustomGoodMorningApp
  Flow Chart" width="720"/>
