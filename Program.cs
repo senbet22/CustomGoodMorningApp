@@ -1,10 +1,14 @@
 ﻿Console.WriteLine("Hello, Welcome to Greetings App!");
 Console.WriteLine("///////////////////////////////");
 
-Console.WriteLine("Please enter your name!");
-string name = Console.ReadLine() ?? "";
+string name = "";
+while (string.IsNullOrWhiteSpace(name))
+{
+    Console.WriteLine("Please enter your name!");
+    name = Console.ReadLine() ?? "";
+}
 
-
+DayOfWeek today = DateTime.Now.DayOfWeek;
 int timeOfDay = DateTime.Now.Hour;
 
 
